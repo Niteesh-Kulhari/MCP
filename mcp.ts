@@ -45,6 +45,16 @@ server.tool("Buy a stock",
     }
 )
 
+server.tool("Sell a stock", 
+  {stock: z.string(), qty: z.number()},
+  async({stock, qty}) => {
+    palceOrder(stock, qty, "SELL");
+
+    return{
+      content:[{type: "text", text: `${qty} stocks of ${stock} have been successfully sold`}]
+    }
+  }
+)
 
 
 const traansport = new StdioServerTransport();
