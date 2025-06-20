@@ -24,4 +24,5 @@ export async function palceOrder(tradingSymbol: string, quantity: number, type: 
 }
 
 
-palceOrder("HDFCBANK", 1, "BUY");
+//palceOrder("HDFCBANK", 1, "BUY");
+
