@@ -11,7 +11,7 @@ const server = new McpServer({
 });
 
 // Add an addition tool
-server.tool("add two numbers",
+server.tool("add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
     content: [{ type: "text", text: String(a + b) }]
@@ -19,7 +19,7 @@ server.tool("add two numbers",
 );
 
 
-server.tool("Factorial two numbers",
+server.tool("Factorial",
     { a: z.number()},
     async ({ a }) => {
         let ans = 1;
@@ -34,7 +34,7 @@ server.tool("Factorial two numbers",
     }
   );
 
-server.tool("Buy a stock",
+server.tool("Buy",
     {stock: z.string(), qty: z.number},
     async({stock, qty}) => {
         palceOrder(stock, qty, "BUY");
@@ -45,7 +45,7 @@ server.tool("Buy a stock",
     }
 )
 
-server.tool("Sell a stock", 
+server.tool("Sell", 
   {stock: z.string(), qty: z.number()},
   async({stock, qty}) => {
     palceOrder(stock, qty, "SELL");
